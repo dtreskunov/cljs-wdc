@@ -1,6 +1,6 @@
 # cljs-wdc
 
-[![Clojars Project](https://img.shields.io/clojars/v/tableau/cljs-wdc.svg)](https://clojars.org/tableau/cljs-wdc)
+[![Clojars Project](https://img.shields.io/clojars/v/cljs-wdc.svg)](https://clojars.org/cljs-wdc)
 [![Build Status](https://travis-ci.org/dtreskunov/cljs-wdc.svg?branch=master)](https://travis-ci.org/dtreskunov/cljs-wdc)
 
 ClojureScript wrapper for the Tableau Web Data Connector library.

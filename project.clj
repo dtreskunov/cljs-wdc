@@ -1,4 +1,4 @@
-(defproject cljs-wdc "0.1.0"
+(defproject cljs-wdc "0.1.1-SNAPSHOT"
   :description "ClojureScript wrapper for the Tableau Web Data Connector library"
   :url "https://github.com/dtreskunov/cljs-wdc"
   :license {:name "Eclipse Public License"
