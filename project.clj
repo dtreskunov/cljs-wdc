@@ -29,7 +29,8 @@
   ;; credentials will be looked up in environment variables: LEIN_USERNAME and LEIN_PASSWORD
   :repositories [["releases" {:url "https://clojars.org/repo"
                               :username :env
-                              :password :env}]
+                              :password :env
+                              :sign-releases false}]
                  ["snapshots" {:url "https://clojars.org/repo"
                                :username :env
                                :password :env}]]
