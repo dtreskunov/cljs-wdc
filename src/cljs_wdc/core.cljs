@@ -1,4 +1,4 @@
-(ns tableau.cljs-wdc.core
+(ns cljs-wdc.core
   (:refer-clojure :exclude [enable-console-print!])
   (:require-macros [cljs.core.async.macros :as async])
   (:require [cljs.core.async :as async]
