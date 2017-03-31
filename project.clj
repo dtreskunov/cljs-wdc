@@ -1,11 +1,36 @@
-(defproject cljs-wdc "0.1.0-SNAPSHOT"
-  :description "FIXME: write this!"
-  :url "http://example.com/FIXME"
-  :dependencies [[org.clojure/clojure "1.8.0"]
-                 [org.clojure/clojurescript "1.9.456"]]
-  :jvm-opts ^:replace ["-Xmx1g" "-server"]
-  :plugins [[lein-npm "0.6.1"]]
-  :npm {:dependencies [[source-map-support "0.4.0"]]}
-  :source-paths ["src" "target/classes"]
-  :clean-targets ["out" "release"]
-  :target-path "target")
+(defproject tableau/cljs-wdc "0.1.0-SNAPSHOT"
+  :description "ClojureScript wrapper for the Tableau Web Data Connector library"
+  :url "https://github.com/dtreskunov/cljs-wdc"
+  :license {:name "Eclipse Public License"
+            :url "http://www.eclipse.org/legal/epl-v10.html"}
+  :dependencies [[org.clojure/clojure "1.9.0-alpha15"]
+                 [org.clojure/clojurescript "1.9.473" :scope "provided"]
+                 [org.clojure/core.async "0.3.442"]
+                 [cljsjs/tableauwdc "2.2.0-1"]]
+  :plugins [[lein-cljsbuild "1.1.5"]]
+  :cljsbuild {:builds
+              [{:id "none"
+                :source-paths ["src"]
+                :compiler
+                {:asset-path "target/none"
+                 :optimizations :none
+                 :output-dir "target/none"
+                 :output-to "target/none.js"}}
+               {:id "advanced"
+                :source-paths ["src"]
+                :compiler
+                {:asset-path "target/advanced"
+                 :optimizations :advanced
+                 :elide-asserts true
+                 :output-dir "target/advanced"
+                 :output-to "target/advanced.js"
+                 :pretty-print false}}]}
+
+  ;; credentials will be looked up in environment variables: LEIN_USERNAME and LEIN_PASSWORD
+  :repositories [["releases" {:url "https://clojars.org/repo"
+                              :username :env
+                              :password :env}]
+                 ["snapshots" {:url "https://clojars.org/repo"
+                               :username :env
+                               :password :env}]]
+  :min-lein-version "2.7.1")

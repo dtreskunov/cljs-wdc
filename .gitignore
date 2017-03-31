@@ -6,6 +6,7 @@ pom.xml
 /release/
 /target/
 .lein-deps-sum
+.lein-failures
 .lein-repl-history
 .lein-plugins/
 .repl*

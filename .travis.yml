@@ -1,0 +1,7 @@
+language: clojure
+jdk:
+  - oraclejdk8
+sudo: required
+install: yes | sudo lein upgrade "2.7.1"
+script: lein do clean, test, cljsbuild once, deploy
+

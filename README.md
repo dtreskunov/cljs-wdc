@@ -1,56 +1,34 @@
 # cljs-wdc
 
-FIXME: Write a one-line description of your library/project.
+[![Clojars Project](https://img.shields.io/clojars/v/tableau/cljs-wdc.svg)](https://clojars.org/tableau/cljs-wdc)
+
+ClojureScript wrapper for the Tableau Web Data Connector library.
 
 ## Overview
 
-FIXME: Write a paragraph about the library/project and highlight its goals.
+This library attempts to simplify development of Tableau Web Data Connectors using ClojureScript.
 
-## Setup
+* [Tableau WDC Overview](https://tableau.github.io/webdataconnector/docs/)
+* [Tableau WDC API](https://tableau.github.io/webdataconnector/docs/api_ref.html)
 
-Most of the following scripts require [rlwrap](http://utopia.knoware.nl/~hlub/uck/rlwrap/) (on OS X installable via brew).
+## Usage
 
-Build your project once in dev mode with the following script and then open `index.html` in your browser.
+1. It is recommended to start by using Leiningen to create a project from the `figwheel` template:
 
-    ./scripts/build
-
-To auto build your project in dev mode:
-
-    ./scripts/watch
-
-To start an auto-building Node REPL:
-
-    ./scripts/repl
-
-To get source map support in the Node REPL:
-
-    lein npm install
+    lein new figwheel my-new-wdc
     
-To start a browser REPL:
-    
-1. Uncomment the following lines in src/cljs_wdc/core.cljs:
-```clojure
-;; (defonce conn
-;;   (repl/connect "http://localhost:9000/repl"))
-```
-2. Run `./scripts/brepl`
-3. Browse to `http://localhost:9000` (you should see `Hello world!` in the web console)
-4. (back to step 3) you should now see the REPL prompt: `cljs.user=>`
-5. You may now evaluate ClojureScript statements in the browser context.
-    
-For more info using the browser as a REPL environment, see
-[this](https://github.com/clojure/clojurescript/wiki/The-REPL-and-Evaluation-Environments#browser-as-evaluation-environment).
-    
-Clean project specific out:
+2. Add this library to `project.clj`
+3. Require it from `core.cljs`
+4. Create an object that implements the `tableau.cljs-wdc.core/IWebDataConnector` protocol
+5. Register the connector by calling `tableau.cljs-wdc.core/register!`
+6. *IMPORTANT*: `index.html` should not include a link to `tableauwdc.js` since it is provided by
+[cljsjs/tableauwdc](https://github.com/cljsjs/packages/tree/master/tableauwdc)!
 
-    lein clean
-     
-Build a single release artifact with the following script and then open `index_release.html` in your browser.
-
-    ./scripts/release
+Look at the [dhis2-wdc](https://github.com/dtreskunov/dhis2-wdc) project for an example of a working
+WDC written using this library.
 
 ## License
 
-Copyright © 2016 FIXME
+Copyright © 2017 Tableau
 
 Distributed under the Eclipse Public License either version 1.0 or (at your option) any later version.
