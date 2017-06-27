@@ -2,7 +2,7 @@
   (:refer-clojure :exclude [enable-console-print!])
   (:require-macros [cljs.core.async.macros :as async])
   (:require [cljs.core.async :as async]
-            [cljs.spec :as s]
+            [cljs.spec.alpha :as s]
             cljsjs.tableauwdc))
 
 ; Don't forget to set :elide-asserts to true in your production compiler settings!
